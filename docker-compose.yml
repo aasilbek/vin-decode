@@ -1,6 +1,6 @@
 version: "3"
 services:
-  postgres-service:
+  db:
     image: postgres:13.3
     restart: always
     container_name: "${PROJECT_NAME}-postgres"
@@ -14,6 +14,23 @@ services:
       - vin-decoder-db:/var/lib/postgresql/data
     command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
 
+  app:
+    build: .
+    command: python src/manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY
+      - DB_NAME
+      - DB_PASS
+      - DB_PORT
+      - DB_USER
+      - DB_HOST
+      - DJANGO_SETTINGS_MODULE
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
 
 
 volumes:

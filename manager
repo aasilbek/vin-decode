@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+
+
+case $1 in
+  runserver)
+    echo "===================================================================="
+  	echo "- Starting Application"
+    echo "===================================================================="
+    docker-compose up
+    echo "===================================================================="
+  	echo "- Waiting  database"
+    echo "===================================================================="
+
+  	;;
+  migrate)
+    echo "===================================================================="
+  	echo "- Migrate"
+    echo "===================================================================="
+    docker-compose run app python src/manage.py migrate
+  	;;
+  createuser)
+    echo "===================================================================="
+  	echo "- Create Super user"
+    echo "===================================================================="
+    docker-compose run app python src/manage.py createsuperuser
+  	;;
+
+  *)
+  	echo "Sorry, I don't understand"
+  	;;
+esac

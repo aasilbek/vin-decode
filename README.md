@@ -9,7 +9,6 @@
 
 ## Prerequisites
 This project has the following prerequisites
-- python 3.8.5
 - docker 19.03.12
 - docker-compose 1.25.0
 
@@ -38,23 +37,23 @@ pip install pre-commit
 pre-commit install
 ```
 
-- If *postgresql database* has not started please start it by following command:
-```
-docker-compose -f deployments/development/docker-compose.yml up -d
-```
-
-- If *development packages* has not been installed please install by running following commit:
-```
-pip install -r requirements/development.txt
-```
-
 - If *migration* has not been applied please apply it first:
 ```
-cd src
-python manage.py migrate
+docker-compose run app python src/manage.py migrate 
+OR use
+source manager migrate
 ```
 
-- Start development server:
+ - If There is no user in database:
 ```
-python runserver 0.0.0.0:8080
+  docker-compose run app python src/manage.py createsuperuser
+ OR use
+ source manager createuser
+```
+
+ - Start development server:
+```
+docker-compose up
+OR use 
+source manager runserver
 ```
