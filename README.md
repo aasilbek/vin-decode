@@ -20,8 +20,8 @@ This project has the following prerequisites
 - Install virtual environment:
 ```
 git clone git@github.com:aasilbek/vin-decode.git
-cd clyqe-backend
-python3.8 -m venv --prompt="v" .env
+cd vin-decode
+
 ```
 
 - Load *local environment variables* to virtual environment:
@@ -56,4 +56,9 @@ source manager migrate
 docker-compose up
 OR use 
 source manager runserver
+```
+
+ - Documentation to API in :
+```
+  http://0.0.0.0:8000/decode/{vin_number}/
 ```
