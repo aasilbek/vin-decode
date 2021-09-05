@@ -18,7 +18,9 @@ BASE_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
 
 LOCAL_APPS = ["vin_decoder"]
 
@@ -105,3 +107,5 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+DECODER_SERVICE_URL = os.environ.get("DECODER_SERVICE_URL")

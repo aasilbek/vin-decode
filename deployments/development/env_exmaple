@@ -6,3 +6,5 @@ export DB_HOST="localhost"
 export DB_PORT="5432"
 export DB_USER="dummy"
 export DB_PASS="dummy"
+export DECODER_SERVICE_URL="https://846a12f1-3de0-46a7-901d-0539ef313a2b.mock.pstmn.io/decode/"
+

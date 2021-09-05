@@ -25,6 +25,7 @@ services:
       - DB_USER
       - DB_HOST
       - DJANGO_SETTINGS_MODULE
+      - DECODER_SERVICE_URL
     volumes:
       - .:/app
     ports:

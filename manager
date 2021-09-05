@@ -25,6 +25,12 @@ case $1 in
     echo "===================================================================="
     docker-compose run app python src/manage.py createsuperuser
   	;;
+   test)
+    echo "===================================================================="
+  	echo "- Create Super user"
+    echo "===================================================================="
+    docker-compose run app pytest -v
+  	;;
 
   *)
   	echo "Sorry, I don't understand"
