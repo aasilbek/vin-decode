@@ -9,7 +9,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 BASE_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -20,6 +19,7 @@ BASE_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "drf_yasg",
 ]
 
 LOCAL_APPS = ["vin_decoder"]
@@ -55,7 +55,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "config.wsgi.application"
-
 
 DATABASES = {
     "default": {

@@ -14,6 +14,6 @@ WORKDIR /app
 
 # Install dependencies
 COPY /requirements /app
-RUN pip install --upgrade pip && pip install --no-cache-dir -r /app/development.txt
+RUN pip install --upgrade pip && pip install -r /app/development.txt
 
 COPY src /app
